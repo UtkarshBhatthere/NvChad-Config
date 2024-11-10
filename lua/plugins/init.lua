@@ -5,7 +5,7 @@ return {
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
+  -- lsp plgin 
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -20,13 +20,14 @@ return {
 
     ---enables autocomplete for opts
     ---@module "auto-session"
-    -- -@type AutoSession.Config
+    ---@type AutoSession.Config
     opts = {
       suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
       -- log_level = 'debug',
     }
   },
 
+  -- Plugin for viewing lsp warning
   {
     "folke/trouble.nvim",
     opts = {},
@@ -40,6 +41,7 @@ return {
     }
   },
 
+  -- Linter
   {
   	"nvim-treesitter/nvim-treesitter",
   	opts = {
@@ -49,5 +51,15 @@ return {
         "html", "css", "markdown",
   		},
   	},
+  },
+
+  -- Plugin for rendering md content.
+  {
+      'MeanderingProgrammer/render-markdown.nvim',
+      ft = { 'markdown' },
+      dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+      ---@module 'render-markdown'
+      ---@type render.md.UserConfig
+      opts = {},
   },
 }
