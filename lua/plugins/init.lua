@@ -62,4 +62,8 @@ return {
       ---@type render.md.UserConfig
       opts = {},
   },
+
+  -- Gitsigns
+  { 'ewis6991/gitsigns.nvim' },
+
 }
